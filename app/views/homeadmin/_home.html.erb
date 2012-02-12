@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Title      : Night Vision
+Version    : 1.0
+Released   : 20080119
+Description: Three-column blog design with the third column allocated for ads. Features Web 2.0 design ideal for 1024x768 resolutions.
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Night Vision by Free Css Templates</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<%= stylesheet_link_tag    "default" %>
+
+</head>
+<body>
+<!-- start header -->
+<div id="wrapper">
+<div id="header">
+	<div id="logo">
+		<h1><a href="#">DialEtika</a></h1>
+		<p><a href="http://www.freecsstemplates.org/">Profa. Criolina da Silva.</a></p>
+	</div>
+	<!-- div id="rss"><a href="#">Subscribe to RSS Feed</a></div>
+	<div id="search">
+		<form id="searchform" method="get" action="">
+			<fieldset>
+				<input type="text" name="s" id="s" size="15" value="" />
+				<input type="submit" id="x" value="Search" />
+			</fieldset>
+		</form>
+	</div -->
+</div>
+<!-- end header -->
+<!-- star menu -->
+<div id="menu">
+	<ul>
+		<li class="current_page_item"><a href="/homeadmin/all">Inicial</a></li>
+		<li><a href="/blog/all">Avisos</a></li>
+		<li><a href="/informa/all">Not&iacute;cias</a></li>
+		<li><a href="/home/login">Docentes</a></li>
+		<li><a href="/homeadmin/logout">SAIR</a></li>
+	</ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+<div id="page">
+	<!-- start ads -->
+	<!-- div id="ads"><a href="#"><img src="images/ad160x600.gif" alt="" width="160" height="600" /></a></div -->
+	<!-- end ads -->
+	<!-- start content -->
+	<div id="content">
+
+		<div class="post">
+			<div class="title">
+				<h2><a href="#">A utiliza&ccedil;&atilde;o do DialEtika,</a></h2>
+			</div>
+			<div class="entry">
+				<p>
+					prev&ecirc; que todas as atividades individuais
+					e coletivas, os semin&aacute;rios e o trabalho final sejam publicados no portal. Alem disso, semanalmente,
+					os alunos devem "bloggar" ao final de cada aula, acerca dos conte&uacute;dos apresentados na mesma.
+					Do mesmo modo os alunos devem se revezar a relatoria das atividades ocorridas naquele dia, em sala de aula.
+					O DialEtika tamb&eacute;m se constitui em um reposit&oacute;rio de "objetos de aprendizagem" pois apresenta
+					os trabalhos das turmas anteriores para serem utilizados por alunos da turma atual e por alunos das turmas
+					futuras. 
+				</p>	
+			</div>
+		</div>
+
+		<div class="post">
+			<div class="title">
+				<h2><a href="#">Avisos</a></h2>
+				
+			</div>
+			<div class="entry">
+				<% for assoc in @avisos %>
+				    <h3><%=h assoc.titulo %> :</h3> 
+				    <blockquote>
+					    <p>
+					    &#8220;<%=h assoc.texto %>&#8221;<br>
+					    <%=assoc.registro.to_s[6..7] %>/<%=assoc.registro.to_s[4..5] %>/<%=assoc.registro.to_s[0..3] %>
+					    </p>
+				    </blockquote>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+			<li id="categories">
+				<h2>Blogs</h2>
+				<ul>
+				<% for assoc in @blogs %>
+				    <li><a href="/blog/comments?id=<%=h assoc.id %>"><%=h assoc.texto %></a> - <%=assoc.registro.to_s[6..7] %>/<%=assoc.registro.to_s[4..5] %>/<%=assoc.registro.to_s[0..3] %></li>
+				<% end %>
+				</ul>
+			</li>
+			<li>
+				<h2>Not&iacute;cias</h2>
+				<ul>
+				<% for noticia in @noticias %>
+				    <li><a href="/informa/show?id=<%=h noticia.id %>"><%=h noticia.titulo %></a> - <%=noticia.registro.to_s[6..7] %>/<%=noticia.registro.to_s[4..5] %>/<%=noticia.registro.to_s[0..3] %></li>
+				<% end %>
+				</ul>
+			</li>
+		
+		</ul>
+	</div>
+	<!-- end sidebar -->
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+	<p class="legal">
+		&copy;2007 Night Vision. All Rights Reserved.
+		&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+		Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>
+		&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+		Icons by <a href="http://famfamfam.com/">FAMFAMFAM</a>. </p>
+	<p class="links">
+		<a href="http://validator.w3.org/check/referer" class="xhtml" title="This page validates as XHTML">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a>
+		&nbsp;&bull;&nbsp;
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" class="css" title="This page validates as CSS">Valid <abbr title="Cascading Style Sheets">CSS</abbr></a>
+	</p>
+</div>
+</div>
+<!-- end footer -->
+</body>
+</html>
+
