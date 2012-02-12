@@ -8,6 +8,8 @@ gem 'rails', '3.1.1'
 
 gem 'json'
 
+gem 'mongoid-encryptor', :require => 'mongoid/encryptor'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,4 +31,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
+
+gem 'mongo'
+gem 'bson_ext', '~> 1.4'
+gem 'mongoid', '~> 2.3'
+
 

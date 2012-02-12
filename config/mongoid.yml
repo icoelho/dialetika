@@ -1,0 +1,21 @@
+defaults: &defaults
+  #host: Staff.mongohq.com
+  #port: 10050
+  #username: iac
+  #password: iac
+  #database: academia
+  host: ds029807.mongolab.com
+  port: 29807
+  username: dial
+  password: 123
+  database: dialetika
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *dafaults
+
