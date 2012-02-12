@@ -45,7 +45,7 @@ Description: Three-column blog design with the third column allocated for ads. F
 	<ul>
 		<li class="current_page_item"><a href="/homeadmin/all">Inicial</a></li>
 		<li><a href="/blog/all">Avisos</a></li>
-		<li><a href="/homeadmin/listNews">Not&iacute;cias</a></li>
+		<li><a href="/informa/all">Not&iacute;cias</a></li>
 		<li><a href="/home/login">Docentes</a></li>
 		<li><a href="/homeadmin/logout">SAIR</a></li>
 	</ul>
@@ -61,17 +61,17 @@ Description: Three-column blog design with the third column allocated for ads. F
 
 		<div class="post">
 			<div class="title">
-				<h2><a href="#">A utiliza&ccedil;&atilde;o do DialEtika,</a></h2>
+				<h2><a href="#">Noticias</a></h2>
 			</div>
 			<div class="entry">
 				<p>
-					prev&ecirc; que todas as atividades individuais
-					e coletivas, os semin&aacute;rios e o trabalho final sejam publicados no portal. Alem disso, semanalmente,
-					os alunos devem "bloggar" ao final de cada aula, acerca dos conte&uacute;dos apresentados na mesma.
-					Do mesmo modo os alunos devem se revezar a relatoria das atividades ocorridas naquele dia, em sala de aula.
-					O DialEtika tamb&eacute;m se constitui em um reposit&oacute;rio de "objetos de aprendizagem" pois apresenta
-					os trabalhos das turmas anteriores para serem utilizados por alunos da turma atual e por alunos das turmas
-					futuras. 
+					<li>
+				<ul>
+				<% for notice in @allnews %>
+				    <li><a href="/informa/show?id=<%=h notice.id %>"><%=h notice.titulo %></a> - <%=notice.registro.to_s[6..7] %>/<%=notice.registro.to_s[4..5] %>/<%=notice.registro.to_s[0..3] %></li>
+				<% end %>
+				</ul>
+			</li> 
 				</p>	
 			</div>
 		</div>

@@ -15,8 +15,15 @@ class HomeadminController < ApplicationController
     session[:userId] = nil
     session[:userAdmin] = nil
     loadNews
-    render "_home"
+    redirect_to :controller => 'home' , :action => 'all'
   end
+  
+  def listNews
+    loadNews
+    @allnews  = Informa.order_by(:registro, "DESC").limit(100)
+    render "_news"
+  end
+  
   
   private
   
